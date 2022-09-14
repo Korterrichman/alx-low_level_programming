@@ -3,7 +3,7 @@
 /**
  * main - entry point
  *
- * return - always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -16,5 +16,5 @@ int main(void)
 		_putchar(word[i]);
 	}
 	_putchar('\n');
-	return 0;
+	return (0);
 }
