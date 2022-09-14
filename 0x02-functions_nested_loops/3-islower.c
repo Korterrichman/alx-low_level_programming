@@ -3,9 +3,12 @@
 /**
  * _islower - entry point
  * Description: function that checks for lowercase character
- * @c - formal parameter that accepts the value of the argument
+ *
+ * @c: formal parameter that accepts the value of the argument
+ *
  * Return: 1 if c is lowercase and 0 otherwise
  */
+
 
 int _islower(int c)
 {
