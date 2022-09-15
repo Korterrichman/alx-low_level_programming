@@ -10,14 +10,14 @@
 int main(void)
 {
 	/* local variable declaration */
-	int a = 0;
-	int b = 1;
-	int c, i;
+	long int a = 0;
+	long int b = 1, i;
+	long int c;
 
 	for (i = 0; i < 50; i++)
 	{
 		c = a + b;
-		printf("%d, ", c);
+		printf("%ld, ", c);
 		a = b;
 		b = c;
 	}
