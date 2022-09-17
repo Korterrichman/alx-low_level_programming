@@ -11,6 +11,9 @@ void print_diagonal(int n)
 	/* local variable declaration */
 	int a, i;
 
+	if (n <= 0)
+		_putchar('\n');
+
 	for (a = 0; a < n; a++)
 	{
 		for (i = 0; i < a; i++)
