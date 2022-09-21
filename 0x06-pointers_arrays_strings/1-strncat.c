@@ -1,7 +1,9 @@
 /**
- * _strncat - function that concatenates two strings using at most n bytes from src
+ * _strncat - function that concatenates two strings
+ * using at most n bytes from src
  * @dest: formal parameter that receives the pointer of the first string
  * @src: formal parameter that receives the pointer of the string to be added
+ * @n: maximum bytes to be used from src
  * Return: a pointer to the resulting string dest
  */
 
