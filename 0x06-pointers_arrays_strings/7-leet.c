@@ -17,7 +17,10 @@ char *leet(char *a)
 		for (j = 0; j < 10; j++)
 		{
 			if (a[i] == k[j])
+			{
 				a[i] = l[j];
+				break;
+			}
 		}
 	}
 	return (a);

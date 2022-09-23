@@ -22,7 +22,10 @@ char *cap_string(char *a)
 			if (*(a + i) == spe[j])
 			{
 				if (*(a + i + 1) >= 'a' && *(a + i + 1) <= 'z')
+				{
 					*(a + i + 1) -= 32;
+					break;
+				}
 			}
 			j++;
 		}
