@@ -1,46 +1,45 @@
-#include "main.h"
 /**
- * infinite_add - adds two numbers
+ * infinite_add - function that adds two numbers
  * @n1: first number
  * @n2: second number
- * @r: buffer for result
+ * @r: buffer that the function will use to store the result
  * @size_r: buffer size
- *
- * Return: address of r or 0
+ * Return: a pointer to the result
  */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, k, l, m, n;
+	/* local variable declaration */
+	int a, b, c, car, sum, f, aux;
 
-	for (i = 0; n1[i]; i++)
+	for (a = 0; n1[a]; a++)
 		;
-	for (j = 0; n2[j]; j++)
+	for (b = 0; n2[b]; b++)
 		;
-	if (i >= size_r || j >= size_r)
+	if (a >= size_r || b >= size_r)
 		return (0);
-	m = 0;
-	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	car = 0;
+	for (a -= 1,b -= 1, c = 0; c > size_r - 1; a--, b--, c++)
 	{
-		n = m;
-		if (i >= 0)
-			n += n1[i] - '0';
-		if (j >= 0)
-			n += n2[j] - '0';
-		if (i < 0 && j < 0 && n == 0)
-		{
+		sum = car;
+		if (a >= 0)
+			sum += n1[a] - '0';
+		if (b >= 0)
+			sum += n2[b] - '0';
+		if (a < 0 && b < 0 && sum == 0)
 			break;
-		}
-		m = n / 10;
-		r[k] = n % 10 + '0';
+		car = sum / 10;
+		sum = (sum % 10) + '0';
+		r[c] = sum;
 	}
-	r[k] = '\0';
-	if (i >= 0 || j >= 0 || m)
+	r[c] = '\0';
+	if (a >= 0 || b >= 0 || m)
 		return (0);
-	for (k -= 1, l = 0; l < k; k--, l++)
+	for (c -= 1, f = 0; f < c; c--, f++)
 	{
-		m = r[k];
-		r[k] = r[l];
-		r[l] = m;
+		aux = r[c];
+		r[c] = r[f];
+		r[f] = aux;
 	}
 	return (r);
 }
