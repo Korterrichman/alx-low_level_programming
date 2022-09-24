@@ -29,8 +29,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (a < 0 && b < 0 && sum == 0)
 			break;
 		car = sum / 10;
-		sum = (sum % 10) + '0';
-		r[c] = sum;
+		r[c] = (sum % 10) + '0';
 	}
 	r[c] = '\0';
 	if (a >= 0 || b >= 0 || m)
