@@ -16,10 +16,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		;
 	for (b = 0; n2[b]; b++)
 		;
-	if (a > size_r || b > size_r)
+	if (a >= size_r || b >= size_r)
 		return (0);
 	car = 0;
-	for (a -= 1,b -= 1, c = 0; c > size_r - 1; a--, b--, c++)
+	for (a -= 1, b -= 1, c = 0; c > size_r - 1; a--, b--, c++)
 	{
 		sum = car;
 		if (a >= 0)
@@ -29,8 +29,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (a < 0 && b < 0 && sum == 0)
 			break;
 		car = sum / 10;
-		sum  = (sum % 10) + '0';
-		r[c] = sum;
+		r[c] = (sum % 10) + '0';
 	}
 	r[c] = '\0';
 	if (a >= 0 || b >= 0 || car)
