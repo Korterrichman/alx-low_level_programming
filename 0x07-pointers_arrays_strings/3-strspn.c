@@ -12,7 +12,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	/* local variable declaration */
-	int a, b, c;
+	unsigned int a, b, c;
 	unsigned int i;
 
 	for (a = 0; accept[a] != '\0'; a++)
