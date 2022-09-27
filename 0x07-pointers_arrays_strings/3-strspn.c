@@ -12,25 +12,26 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	/* local variable declaration */
-	unsigned int a, b, c, check;
-	unsigned int i;
+	unsigned int i, n, value, check;
 
-	for (a = 0; accept[a] != '\0'; a++)
-		;
-	i = 0;
-	for (b = 0; s[b] != '\0'; b++)
+	value = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		check = 0;
-		for (c = 0; c < a; c++)
+
+		for (n = 0; accept[n] != '\0'; n++)
 		{
-			if (s[b] == accept[c])
+			if (accept[n] == s[i])
 			{
-				i++;
+				value++;
 				check = 1;
 			}
 		}
-		if (check = 0)
-			return (i);
+
+		if (check == 0)
+			return (value);
 	}
-	return (i);
+
+	return (value);
 }
