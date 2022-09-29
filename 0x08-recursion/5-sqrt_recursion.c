@@ -1,35 +1,32 @@
 #include "main.h"
+
 /**
- * helper - helps decide if I'm right
- * @i: interger to guess
+ * helper - checks if their is a root and returns if there is
+ * @i: integer to guess
  * @n: integer to get root of
- * Return: value of root
+ * Return: value of root or -1 if none is found
  */
+
 int helper(int i, int n)
 {
-	int j;
-
-	if (i * i != n)
-	{
-		if (i > n)
-		{
-			return (-1);
-		}
-		j = helper(i + 1, n);
-		return (j + 1);
-	}
-	return (0);
+	if (i * i == n)
+		return (i);
+	if (i > n)
+		return (-1);
+	return (helper(i + 1, n));
 }
+
 /**
- * _sqrt_recursion - returns square root
- * @n: integer to return
- * Return: return int of squareroot
+ * _sqrt_recursion -function that returns square root
+ * @n: integer to find root of
+ * Return: return int of squareroot or -1 if none is found
  */
+
 int _sqrt_recursion(int n)
 {
 	int i = 0;
 
-	if (helper(i, n) == n && n != 1)
+	if (n < 0)
 		return (-1);
 	return (helper(i, n));
 }
