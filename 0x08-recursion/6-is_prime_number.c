@@ -13,7 +13,7 @@ int prime_checker(int i, int n)
 		return (1);
 	if (n % i == 0)
 		return (0);
-	return (primechecker(i + 1, n));
+	return (prime_checker(i + 1, n));
 }
 
 /**
@@ -28,5 +28,5 @@ int is_prime_number(int n)
 
 	if (n < 2)
 		return (0);
-	return (primechecker(i, n));
+	return (prime_checker(i, n));
 }
