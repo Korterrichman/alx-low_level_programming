@@ -1,29 +1,37 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <stdio.h>
+#include "main.h"
+
 /**
- * main - main funct
- * @argc: param count
- * @argv: param pointer
- * Return: int
+ * main - program that adds positive numbers
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 for success and 1 for error
  */
+
 int main(int argc, char *argv[])
 {
-	int i, j, sum = 0;
+	/* local variable declaration */
+	int i, sum = 0;
 
-	for (i = 1; i < argc; i++)
+	if (argc > 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (i = 1; i < argc; i++)
 		{
-			if (!isdigit(argv[i][j]))
+			if (atoi(argv[i]))
+			{
+				sum += atoi(argv[i]);
+			}
+			else
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		sum += atoi(argv[i]);
+		printf("%d\n", sum);
+		return (0);
 	}
-	printf("%d\n", sum);
 
+	printf("%d\n", 0);
 	return (0);
 }
