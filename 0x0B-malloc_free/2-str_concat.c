@@ -26,12 +26,21 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0, size1, size2;
 	char *p;
 
+	/* if the string is empty */
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
 	size1 = length(s1);
 	size2 = length(s2);
 
+	/* memory allocation */
 	p = malloc(sizeof(char) * (size1 + size2 + 1));
 	if (p == NULL)
 		return (NULL);
+
+	/* concatenation */
 	while (i < size1)
 	{
 		p[i] = s1[i];
