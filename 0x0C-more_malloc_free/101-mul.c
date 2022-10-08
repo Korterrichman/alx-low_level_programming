@@ -45,7 +45,7 @@ void print_array(char *str, int length)
  * Return: a pointer to the allocated memory, NULL if there is an error
  */
 
-void *_calloc(unsigned int num,unsigned int typesize)
+void *_calloc(unsigned int num, unsigned int typesize)
 {
 	unsigned int i;
 	char *tmp;
@@ -105,16 +105,15 @@ int main(int argc, char *argv[])
 {
 	int len1 = 0, len2 = 0, j = 0, i;
 	unsigned int lenpro;
-	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
 	char *ptr;
 
 	if (argc != 3 || _isnumber(argv[1]) == 1 || _isnumber(argv[2]) == 1)
 	{
 		for (i = 0; i < 6; i++)
 		{
-			_putchar(E[i]);
+			printf("Error\n");
+			exit(98);
 		}
-		exit(98);
 	}
 	while (argv[1][len1] != '\0')
 		len1++;
@@ -125,7 +124,8 @@ int main(int argc, char *argv[])
 	if (ptr == NULL)
 	{
 		free(ptr);
-		return (0);
+		printf("Error\n");
+		exit(98);
 	}
 	for (i = len2 - 1; i >= 0; i--)
 	{
@@ -134,6 +134,5 @@ int main(int argc, char *argv[])
 	}
 	print_array(ptr, lenpro);
 	free(ptr);
-	exit(EXIT_SUCCESS);
 	return (0);
 }
