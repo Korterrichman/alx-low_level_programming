@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
 	if (ptr == NULL)
 	{
 		free(ptr);
-		exit(98);
+		return (0);
 	}
 	for (i = len2 - 1; i >= 0; i--)
 	{
@@ -134,5 +134,6 @@ int main(int argc, char *argv[])
 	}
 	print_array(ptr, lenpro);
 	free(ptr);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
