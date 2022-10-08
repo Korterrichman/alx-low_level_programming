@@ -105,11 +105,15 @@ int main(int argc, char *argv[])
 {
 	int len1 = 0, len2 = 0, j = 0, i;
 	unsigned int lenpro;
+	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
 	char *ptr;
 
 	if (argc != 3 || _isnumber(argv[1]) == 1 || _isnumber(argv[2]) == 1)
 	{
-		printf("Error\n");
+		for (i = 0; i < 6; i++)
+		{
+			_putchar(E[i]);
+		}
 		exit(98);
 	}
 	while (argv[1][len1] != '\0')
@@ -121,7 +125,6 @@ int main(int argc, char *argv[])
 	if (ptr == NULL)
 	{
 		free(ptr);
-		printf("Error\n");
 		exit(98);
 	}
 	for (i = len2 - 1; i >= 0; i--)
@@ -131,6 +134,5 @@ int main(int argc, char *argv[])
 	}
 	print_array(ptr, lenpro);
 	free(ptr);
-	exit(EXIT_SUCCESS);
 	return (0);
 }
