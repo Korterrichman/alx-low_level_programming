@@ -131,5 +131,6 @@ int main(int argc, char *argv[])
 	}
 	print_array(ptr, lenpro);
 	free(ptr);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
