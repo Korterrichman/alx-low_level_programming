@@ -45,9 +45,9 @@ void print_array(char *str, int length)
  * Return: a pointer to the allocated memory, NULL if there is an error
  */
 
-void *_calloc(int num, int typesize)
+void *_calloc(unsigned int num,unsigned int typesize)
 {
-	int i;
+	unsigned int i;
 	char *tmp;
 	void *ptr;
 
@@ -103,7 +103,8 @@ char *mul_array(char *a1, int len1, char n, char *pro, int lenpro)
 
 int main(int argc, char *argv[])
 {
-	int len1 = 0, len2 = 0, j = 0, i, lenpro;
+	int len1 = 0, len2 = 0, j = 0, i;
+	unsigned int lenpro;
 	char *ptr;
 
 	if (argc != 3 || _isnumber(argv[1]) == 1 || _isnumber(argv[2]) == 1)
